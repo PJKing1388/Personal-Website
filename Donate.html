@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support My Work</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .donation-option {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+        }
+        .wallet-address {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            word-break: break-all;
+            font-family: monospace;
+            margin: 10px 0;
+            position: relative;
+        }
+        .copy-btn {
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+            transition: all 0.3s ease;
+        }
+        .copy-btn:hover {
+            background: #a29bfe;
+            transition: 0.5s;
+            opacity: 0.6;
+        }
+        .copied {
+            background: #fd79a8 !important;
+        }
+        .payment-method {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .warning {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #ffc107;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Support My Work</h1>
+    
+    <p>If you find value in my work and would like to support me, you can send donations via the following methods:</p>
+    
+    <div class="warning">
+        <strong>Important:</strong> Please double-check wallet addresses before sending funds. 
+        I'm not responsible for funds sent to incorrect addresses.
+    </div>
+    
+    <div class="donation-option">
+        <div class="payment-method">Bitcoin (BTC)</div>
+        <p>Send Bitcoin to this address:</p>
+        <div class="wallet-address" id="btc-address">
+            bc1qgakudskx2tfc4pp2nlaycnlejkrcrstk7q8wd9
+            <button class="copy-btn" onclick="copyToClipboard('btc-address')">Copy</button>
+        </div>
+    </div>
+    
+    <div class="donation-option">
+        <div class="payment-method">Ethereum (ETH) / ERC-20 Tokens</div>
+        <p>Send Ethereum or any ERC-20 token to this address:</p>
+        <div class="wallet-address" id="eth-address">
+            0xf1815A04365566f36Fd3bfEa1F0F9f634d3BE1B9
+            <button class="copy-btn" onclick="copyToClipboard('eth-address')">Copy</button>
+        </div>
+    </div>
+    
+    <div class="donation-option">
+        <div class="payment-method">TRON (TRX) / TRC-20 Tokens</div>
+        <p>Send TRON or any TRC-20 token to this address:</p>
+        <div class="wallet-address" id="trx-address">
+            TSM8ZTxMWfSxBG6SrfNsthcSibnjfieT3f
+            <button class="copy-btn" onclick="copyToClipboard('trx-address')">Copy</button>
+        </div>
+    </div>
+    
+    <div class="donation-option">
+        <div class="payment-method">Credit/Debit Card</div>
+        <p>You can send funds directly to my card:</p>
+        <div class="wallet-address" id="card-number">
+            5557 8510 2625 9561
+            <button class="copy-btn" onclick="copyToClipboard('card-number')">Copy</button>
+        </div>
+        <div class="wallet-address" id="iban">
+            IR670690063901201855480001
+            <button class="copy-btn" onclick="copyToClipboard('iban')">Copy</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        async function copyToClipboard(id) {
+            const element = document.getElementById(id);
+            const text = element.innerText.replace('Copy', '').trim();
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                const btn = element.querySelector('.copy-btn');
+                btn.classList.add('copied');
+                btn.textContent = 'Copied!';
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    btn.textContent = 'Copy';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy text. Please try again or copy manually.');
+            }
+        }
+    </script>
+</body>
+</html>
