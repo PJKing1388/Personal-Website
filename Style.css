@@ -186,6 +186,8 @@ nav {
     color: var(--primary);
     margin-left: 15px;
     box-shadow: none;
+    margin-right: 12px;
+    margin-top: 4px;
 }
 
 .btn-outline:hover {

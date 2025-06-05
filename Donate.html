@@ -48,9 +48,6 @@
             transition: 0.5s;
             opacity: 0.6;
         }
-        .copied {
-            background: #fd79a8 !important;
-        }
         .payment-method {
             font-weight: bold;
             margin-bottom: 10px;
@@ -72,7 +69,6 @@
     
     <div class="warning">
         <strong>Important:</strong> Please double-check wallet addresses before sending funds. 
-        I'm not responsible for funds sent to incorrect addresses.
     </div>
     
     <div class="donation-option">
@@ -114,27 +110,5 @@
             <button class="copy-btn" onclick="copyToClipboard('iban')">Copy</button>
         </div>
     </div>
-    
-    
-    <script>
-        async function copyToClipboard(id) {
-            const element = document.getElementById(id);
-            const text = element.innerText.replace('Copy', '').trim();
-            
-            try {
-                await navigator.clipboard.writeText(text);
-                const btn = element.querySelector('.copy-btn');
-                btn.classList.add('copied');
-                btn.textContent = 'Copied!';
-                setTimeout(() => {
-                    btn.classList.remove('copied');
-                    btn.textContent = 'Copy';
-                }, 2000);
-            } catch (err) {
-                console.error('Failed to copy: ', err);
-                alert('Failed to copy text. Please try again or copy manually.');
-            }
-        }
-    </script>
 </body>
 </html>
