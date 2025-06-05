@@ -33,21 +33,6 @@
             margin: 10px 0;
             position: relative;
         }
-        .copy-btn {
-            background: #6c5ce7;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            float: right;
-            transition: all 0.3s ease;
-        }
-        .copy-btn:hover {
-            background: #a29bfe;
-            transition: 0.5s;
-            opacity: 0.6;
-        }
         .payment-method {
             font-weight: bold;
             margin-bottom: 10px;
@@ -76,7 +61,6 @@
         <p>Send Bitcoin to this address:</p>
         <div class="wallet-address" id="btc-address">
             bc1qgakudskx2tfc4pp2nlaycnlejkrcrstk7q8wd9
-            <button class="copy-btn" onclick="copyToClipboard('btc-address')">Copy</button>
         </div>
     </div>
     
@@ -85,7 +69,6 @@
         <p>Send Ethereum or any ERC-20 token to this address:</p>
         <div class="wallet-address" id="eth-address">
             0xf1815A04365566f36Fd3bfEa1F0F9f634d3BE1B9
-            <button class="copy-btn" onclick="copyToClipboard('eth-address')">Copy</button>
         </div>
     </div>
     
@@ -94,7 +77,6 @@
         <p>Send TRON or any TRC-20 token to this address:</p>
         <div class="wallet-address" id="trx-address">
             TSM8ZTxMWfSxBG6SrfNsthcSibnjfieT3f
-            <button class="copy-btn" onclick="copyToClipboard('trx-address')">Copy</button>
         </div>
     </div>
     
@@ -103,11 +85,9 @@
         <p>You can send funds directly to my card:</p>
         <div class="wallet-address" id="card-number">
             5557 8510 2625 9561
-            <button class="copy-btn" onclick="copyToClipboard('card-number')">Copy</button>
         </div>
         <div class="wallet-address" id="iban">
             IR670690063901201855480001
-            <button class="copy-btn" onclick="copyToClipboard('iban')">Copy</button>
         </div>
     </div>
 </body>
